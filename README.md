@@ -1,43 +1,26 @@
 # Guessing-Game-Uniqueness-
 🔐 A simple Python Password Guessing Game with easy, medium, and hard levels. Randomly selects a secret word, tracks attempts, and gives hints showing correct letters in the right positions. Built using pure Python and the random module, perfect for beginners to practice loops, lists, and string logic.
 
-import random
-easy_words = ["apple", "train", "tiger","money", "india", ]
-medium_words = ["pyhton", "bottle", "monkey", "planet", "laptop"]
-hard_words = ["elephant", "diamond", "umbrella", "computer", "mountain"]
+🔐 Password Guessing Game
 
-print("Welcome to the password guessing game")
-print("Choose a difficulty level: easy, medium or hard")
+A simple Python project where the player tries to guess a secret password chosen randomly from a word list.  
+- Three difficulty levels: easy, medium, hard  
+- Built with pure Python (only uses the `random` module)  
+- Tracks number of attempts until the correct guess  
+- Provides hints showing correct letters in the right positions  
+- Beginner‑friendly project to practice lists, loops, conditions, and string indexing  
 
-level = input("Enter difficulty: ").lower()
-if level == "easy":
-    secret = random.choice(easy_words)
-elif level == "medium":
-    secret = random.choice(medium_words)
-elif level == "hard":
-    secret = random.choice(hard_words)
-else:
-    print("Invalid choice.Defaulting to easy level")
-    secret = random.choice(easy_words)
+Example Output:
+Welcome to the password guessing game
+Choose a difficulty level: easy, medium or hard
+Enter difficulty: medium
 
-attempts = 0
-print("\nGuess the secret password")
+Guess the secret password
+Enter your guess: planet
+Hint: pla___
+Enter your guess: laptop
+Congratulations! You guessed it in 2 attempts.
 
-while True:
-    guess = input("Enter your guess: ").lower()
-    attempts += 1
-
-    if guess == secret:
-        print(f"congratulation! You guessed it in (attempts) attempts.")
-        break
-    hint = ""
-    for i in range(len(secret)):
-        if i< len(guess) and guess(i) == secret(i):
-            hint += guess[i]
-        else:
-            hint += "_"
-            print("Hint:", hint)
-            print("Game over")
             
 
 
